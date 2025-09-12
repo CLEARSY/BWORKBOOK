@@ -1,0 +1,3 @@
+﻿THEORY User_Pass IS
+Operation(WellDefinedness_getMaximum) & ff(0) & dd(0) & ah(ran(array) : FIN(INTEGER)) & ah(ran(array) <: NAT) & mp & pr & ah(ran(array) : FIN(NAT)) & mp & pr & pr & pr
+END 

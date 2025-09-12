@@ -1,0 +1,5 @@
+MACHINE
+Main
+OPERATIONS
+main = skip
+END

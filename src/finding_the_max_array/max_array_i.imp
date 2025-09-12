@@ -1,0 +1,52 @@
+IMPLEMENTATION max_array_i
+REFINES max_array_r
+
+SEES
+    ctx
+    
+IMPORTS
+    iter_services
+
+OPERATIONS
+    maxi <-- getMaximum (array) =
+    VAR local_maxi, step, flag IN
+        // step: loop's index
+        // local_maxi: local maximum value
+        // flag: array bounds control
+        
+        // step := 0;
+        flag <-- init_iter ;
+        
+        // We need to set local_maxi := array(0);
+        flag, step <-- next_iter ;  
+        local_maxi := array(step);
+        
+        WHILE (flag = TRUE) DO
+            VAR var_loc IN
+                flag, step <-- next_iter ; 
+                var_loc := array(step);
+                
+                IF (local_maxi < var_loc)THEN
+                    local_maxi := var_loc
+                END
+            END
+        INVARIANT
+            // Variables' types
+            step : 0..NN &
+            local_maxi : ran(array) &
+            array : (0..NN) --> NAT &
+            Done <: 0..NN &
+            Todo <: 0..NN &
+            Done /\ Todo = {} &
+            Done \/ Todo = 0..NN &
+            flag = bool(not(Todo={})) &
+            step : Done &
+            
+            // Local maximum properties
+            !index.(index : Done => array(index) <= local_maxi)
+        VARIANT
+            NN + 1 - card(Done)
+        END;
+        maxi := local_maxi
+    END
+END

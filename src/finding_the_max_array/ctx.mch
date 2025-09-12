@@ -1,0 +1,11 @@
+MACHINE
+    ctx
+
+CONCRETE_CONSTANTS
+    NN
+
+PROPERTIES
+    NN : NAT1 &
+    NN = 10
+
+END

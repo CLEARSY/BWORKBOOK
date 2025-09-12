@@ -1,0 +1,3 @@
+﻿THEORY User_Pass IS
+Operation(Operation_next_iter) & ff(0) & dd(0) & eh(Dom_Array,Todo\/Done,Goal) & pp(rt.1 | 10)
+END 

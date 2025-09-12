@@ -1,0 +1,29 @@
+IMPLEMENTATION Main_i
+REFINES Main
+IMPORTS
+    Integer_arithmetic
+OPERATIONS
+    main =
+    VAR aa, bb, res, pp IN
+        aa := 5;
+        bb := 2 ;
+        res := 0;
+        pp := 2;
+        set_a(aa) ;
+        set_b(bb) ;
+        sum_ab ;
+        res <-- get_result;
+        sub_ab ;
+        res <-- get_result ;
+        mul_ab ;
+        res <-- get_result;
+        div_ab ;
+        res <-- get_result ;
+        mod_ab ;
+        res <-- get_result ;
+        max_ab ;
+        res <-- get_result ;
+        pow_a(pp) ;
+        res <-- get_result
+    END
+END

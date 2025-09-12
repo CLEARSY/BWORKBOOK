@@ -1,0 +1,12 @@
+REFINEMENT max_array_r
+REFINES max_array
+
+SEES
+    ctx
+
+OPERATIONS
+    maxi <-- getMaximum (array) =
+    BEGIN
+       maxi : (maxi : ran(array) & !(index).(index : dom(array) => array(index) <= maxi))
+    END
+END

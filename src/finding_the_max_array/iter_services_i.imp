@@ -1,0 +1,37 @@
+IMPLEMENTATION iter_services_i
+REFINES iter_services
+
+SEES
+    ctx
+
+CONCRETE_VARIABLES
+    
+    index
+    
+INVARIANT
+    
+    index : NAT &
+    Todo = index..NN &
+    Done = 0..(index-1)
+    
+INITIALISATION
+    
+    index := 0
+    
+OPERATIONS
+
+    flag <-- init_iter =
+    BEGIN
+        index := 0 ;
+        flag := bool (index <= NN)
+    END
+    ;
+    
+    flag, elt <-- next_iter =
+    BEGIN
+        elt := index;
+        index := index + 1 ;
+        flag := bool (index <= NN)
+    END
+    
+END

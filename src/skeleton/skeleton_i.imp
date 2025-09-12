@@ -1,0 +1,62 @@
+IMPLEMENTATION
+   Name_i
+
+REFINES
+   Name
+
+CONCRETE_CONSTANTS
+
+   Constant3,
+   Constant4,
+   ...
+
+VALUES
+
+   Set1 = Interval1;
+   Constant3 = Value7;
+   Constant4 = Value8;
+   ...
+
+PROPERTIES
+
+   Constant3 : Set11 &
+   Constant4 : Set12 &
+   ...
+
+CONCRETE_VARIABLES
+
+   Variable3,
+   Variable4,
+   ...
+
+INVARIANT
+
+   Variable3 : Set12 &
+   Variable4 : Set13 &
+   /* Link invariant */ &
+   ...
+
+INITIALISATION
+
+   Variable3 := Value9;
+   Variable4 := Value10;
+   ...
+
+OPERATIONS
+
+   res1, res2, ... <-- op1 (param1, param2, ...) =
+   BEGIN
+      res1 := Value11;
+      res2 := Value12;
+      ...
+   END
+   ;
+
+   res3, res4, ... <-- op2 (param3, param4, ...) =
+   BEGIN
+        substitution3;
+        substitution4;
+        ...
+   END
+
+END

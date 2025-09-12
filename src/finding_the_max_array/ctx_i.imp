@@ -1,0 +1,7 @@
+IMPLEMENTATION ctx_i
+REFINES ctx
+
+VALUES
+    NN = 10
+    
+END

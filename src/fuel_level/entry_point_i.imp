@@ -1,0 +1,32 @@
+IMPLEMENTATION entry_point_i
+REFINES entry_point
+
+IMPORTS ctx, main_fuel
+
+OPERATIONS
+   compute_initial_level_entry_point =
+   BEGIN
+       compute_initial_level
+   END;
+   
+   compute_remaining_fuel_entry_point =
+   BEGIN
+       compute_remaining_fuel
+   END;
+   
+   estimated_lvl <-- get_estimated_level_entry_point =
+   BEGIN
+       estimated_lvl <-- get_estimated_level
+   END;
+   
+   status_1 <-- get_status_entry_point =
+   BEGIN
+       status_1 <-- get_status
+   END;
+   
+   estimated_cmpt <-- get_estimated_consumption_entry_point =
+   BEGIN
+       estimated_cmpt <-- get_estimated_consumption
+   END
+
+END

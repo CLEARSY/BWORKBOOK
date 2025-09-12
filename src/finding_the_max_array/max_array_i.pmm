@@ -1,0 +1,8 @@
+﻿THEORY User_Pass IS
+Operation(Operation_getMaximum) & ff(0) & dd(1) & pp(rt.1 | 10);
+Operation(Operation_getMaximum) & ff(0) & dd(0) & ah(index = chosen) & pp(rt.1 | 10);
+Operation(Operation_getMaximum) & ff(0) & dd(1) & eh(new_Todo$1,_h,Goal) & pp(rt.1 | 10);
+Operation(WellDefinedness_getMaximum) & ff(0) & dd(1) & dc(Done = {}) & mp & mp;
+Operation(Operation_getMaximum) & ff(0) & dd(1) & ah(Todo = {}) & pr & mp & ah(Done = 0..10) & ah(Done\/Todo = 0..10) & eh(Todo,_h,Goal) & mp & mp & ph(index,!index.(index : Done => array$1(index)<=local_maxi)) & eh(Done,_h,Goal) & mp;
+Operation(Operation_getMaximum) & ff(0) & dd(0) & eh(NN,_h,Goal) & ah(card(0..10)<=11) & pr & dd(0) & ss & mp
+END 

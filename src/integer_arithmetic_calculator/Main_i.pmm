@@ -1,0 +1,6 @@
+﻿THEORY User_Pass IS
+Operation(Operation_main) & ff(0) & dd(0) & eh(aa) & ar(MyPowerT.1,Goal) & mp
+END &
+THEORY MyPowerT IS
+5**2 == 5*5
+END

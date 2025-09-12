@@ -1,0 +1,11 @@
+IMPLEMENTATION entry_point_i
+REFINES entry_point
+
+IMPORTS max_array, ctx
+
+OPERATIONS
+    maxi <-- get_max (array) = 
+    BEGIN       
+        maxi <-- getMaximum(array)
+    END
+END

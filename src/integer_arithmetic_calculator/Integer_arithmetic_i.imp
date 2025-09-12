@@ -1,0 +1,55 @@
+IMPLEMENTATION Integer_arithmetic_i
+REFINES Integer_arithmetic
+CONCRETE_VARIABLES
+    aa, bb, result
+INITIALISATION
+    aa := 0 ;
+    bb := 0 ;
+    result := 0
+OPERATIONS
+    set_a(xx) =
+    BEGIN
+        aa := xx
+    END;
+    set_b(xx) =
+    BEGIN
+        bb := xx
+    END;
+    res <-- get_result =
+    BEGIN
+        res := result
+    END;
+    /* Operations */
+    sum_ab =
+    BEGIN
+        result := aa + bb
+    END;
+    sub_ab =
+    BEGIN
+        result := aa - bb
+    END;
+    mul_ab =
+    BEGIN
+        result := aa * bb
+    END;
+    div_ab =
+    BEGIN
+        result := aa / bb
+    END;
+    mod_ab =
+    BEGIN
+        result := aa mod bb
+    END;
+    pow_a(pp) =
+    BEGIN
+        result := aa ** pp
+    END;
+    max_ab =
+    BEGIN
+        IF aa >= bb THEN
+            result := aa
+        ELSE
+            result := bb
+        END
+    END
+END

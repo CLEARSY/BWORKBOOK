@@ -1,0 +1,33 @@
+IMPLEMENTATION array_i
+REFINES array
+
+SEES
+    ctx
+
+IMPORTS
+    iter_services
+
+INITIALISATION
+    Array := (0..NN) * {0}
+
+OPERATIONS
+    set_array_value =
+    VAR
+        current, flag
+    IN
+        flag <-- init_iter ;
+        WHILE
+            flag = TRUE
+        DO
+            flag, current <-- next_iter ;
+            Array(current) := current
+        INVARIANT
+            Todo \/ Done = (0..NN) &
+            flag = bool (Todo /= {}) &
+            Array : (0..NN) --> NAT &
+            (Done /= {} => !(xx).(xx : Done => Array(xx) = xx))
+        VARIANT
+            card (Todo)
+        END
+    END
+END

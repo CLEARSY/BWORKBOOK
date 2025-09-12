@@ -1,0 +1,46 @@
+IMPLEMENTATION switch_i
+REFINES switch
+OPERATIONS
+    pos <-- estimate(m1,m2,m3) =
+    CASE m1 OF
+        EITHER normal THEN
+            IF m2 = reverse or m3 = reverse THEN
+                pos:=void
+            ELSE
+                pos:=normal
+            END
+        OR reverse THEN
+            IF m2 = normal or m3 = normal THEN
+                pos:=void
+            ELSE
+                pos:=reverse
+            END
+        ELSE
+            CASE m2 OF
+                EITHER normal THEN
+                    IF m3 = reverse THEN
+                        pos:=void
+                    ELSE
+                        pos:=normal
+                    END
+                OR reverse THEN
+                    IF m3 = normal THEN
+                        pos:=void
+                    ELSE
+                        pos:=reverse
+                    END
+                ELSE
+                     CASE m3 OF
+                        EITHER normal THEN
+                            pos:=normal
+                        OR reverse THEN
+                            pos:=reverse
+                        OR void THEN
+                            pos:=void
+                        END
+                    END
+                END
+            END
+        END
+    END
+END

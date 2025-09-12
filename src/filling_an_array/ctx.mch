@@ -1,0 +1,10 @@
+MACHINE
+    ctx
+
+CONCRETE_CONSTANTS
+    NN
+
+PROPERTIES
+    NN : NAT
+
+END

@@ -1,0 +1,9 @@
+IMPLEMENTATION entry_point_i
+REFINES entry_point
+
+IMPORTS
+    ctx, array
+    
+OPERATIONS
+    op = set_array_value
+END

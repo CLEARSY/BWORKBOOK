@@ -1,0 +1,3 @@
+﻿THEORY User_Pass IS
+Operation(Operation_getMaximum) & ff(0) & eh(array,_h,Goal) & eh(NN,_h,Goal) & eh(0..10,dom(array$1),Goal) & pp(rt.1 | 10)
+END 

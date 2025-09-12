@@ -1,0 +1,4 @@
+﻿THEORY User_Pass IS
+Operation(Operation_get_max) & ff(0) & dd(0) & ah(ran(array) <: NAT) & mp & mp & ah(not(ran(array) = {})) & pp(rt.1 | 10) & pp(rt.1 | 10) & ah(ran(array) <: NAT) & pp(rt.1 | 10);
+Operation(Operation_get_max) & ff(0) & dd(0) & ah(ran(array) <: NAT) & mp & dd(0) & ah(NAT : FIN(NATURAL)) & pr & pr
+END 

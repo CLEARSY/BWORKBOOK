@@ -1,0 +1,30 @@
+IMPLEMENTATION Calculate_X_from_Y_i
+REFINES Calculate_X_from_Y
+
+INITIALISATION
+   xx := 3;
+   yy := 0
+
+OPERATIONS
+   calculate_new_x (new_yy) =
+   VAR index, xx_copy IN
+      // index: loop's control index
+      // xx_copy: local copy of xx that is progressivelly incremented by 1
+      index := 0;
+      xx_copy := new_yy;
+      
+      WHILE index < 3 DO
+         xx_copy := xx_copy + 1;
+         index := index + 1
+      INVARIANT
+         xx_copy : INT &
+         index : NAT &
+         index: 0..3 &
+         xx_copy = new_yy + index
+      VARIANT
+         3 - index
+      END;
+      xx := xx_copy;
+      yy := new_yy
+   END
+END
