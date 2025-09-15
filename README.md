@@ -39,6 +39,8 @@ Before creating a project with Atelier B:
 - open a file explorer on the src subdirectory, select all the files, drag & drop the files on the Atelier B project panel: they have been added to your project.
 - if a file is missing, it should appear on the Atelier B panel with a red cross. Just add the missing file to remove the error.
 
+![](sortie.gif)
+
 ## WHAT'S NEXT ?
 
 In a future iteration in 2026, new exercises will be added, covering in particular:
