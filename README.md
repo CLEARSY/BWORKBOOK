@@ -32,14 +32,19 @@ The 7 models are in this order:
 Create one project per example. 
 Before creating a project with Atelier B: 
 - create a directory for the project in a place where your have read/write access;
-- create subdirectories bdbp, lang, and src;
-- when you create the poroject with Atelier B, on the second window, select the bdp subdirectory just created. You don't need to select the lang directory as Atelier B already noticed its existence;
-- move the source files (mch, ref, imp, pmm files) from the github to the src subdirectory;
+- create subdirectories *bdp*, *lang*, and *src*;
+- when you create the project with Atelier B, on the second window:
+	- For the *Project Database* field: select the *bdp* subdirectory just created. 
+	- For the *Translations directory*: you don't need to select the *lang* directory as Atelier B already noticed its existence;
+- move the source files (mch, ref, imp, pmm files) from the github to the *src* subdirectory;
 - open the project, select the classical view,
-- open a file explorer on the src subdirectory, select all the files, drag & drop the files on the Atelier B project panel: they have been added to your project.
+- open a file explorer on the *src* subdirectory, select all the files, drag & drop the files on the Atelier B project panel: they have been added to your project.
+
+![Drag & drop files from explorer to Atelier B project view](sortie.gif)
+
 - if a file is missing, it should appear on the Atelier B panel with a red cross. Just add the missing file to remove the error.
 
-![](sortie.gif)
+
 
 ## WHAT'S NEXT ?
 
