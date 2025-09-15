@@ -1,13 +1,16 @@
 ![](title.jpg)
 
-# BWORKBOOK
+# B WORKBOOK
 
-⚡ The B WORKBOOK is now available on CLEARSY's GitHub (https://github.com/CLEARSY/BWORKBOOK).
+The B WORKBOOK is now available on CLEARSY's GitHub (https://github.com/CLEARSY/BWORKBOOK).
 After several months of effort, the first version can be consulted and used for training in the use of formal methods and teaching the B method.
 
-😍 Many thanks to the contributors and reviewers, fromm Europe et South America, who have made this possible.
+Many thanks to the contributors and reviewers, fromm Europe et South America, who have made this possible.
 
-✅ The B WORKBOOK now contains 7 exercises of increasing complexity, providing a step-by-step introduction to the various Atelier B functionalities.
+
+## CONTENTS
+
+The B WORKBOOK now contains 7 exercises of increasing complexity, providing a step-by-step introduction to the various Atelier B functionalities.
 It covers the phases of formal specification, implementation, proof, code generation and compilation of the final executable.
 Each exercise is supplied with:
 - modeling files,
@@ -15,13 +18,36 @@ Each exercise is supplied with:
 - additional manual source code and associated Makefile, for compilation in Unix environments (Windows WSL, Linux, MacOS).
 It also contains instructions for using ProB to animate the models.
 
-😅 In a future iteration in 2026, new exercises will be added, covering in particular:
+## INSTALLING MODELS
+
+The 7 models are in this order:
+- a simple railroad switch,
+- an airlock operating system,
+- an integer arithmetic calculator,
+- a fuel level supervisor,
+- a simple loop usage example,
+- filling an array with a given value,
+- find the maximum of an array.
+
+Create one project per example. 
+Before creating a project with Atelier B: 
+- create a directory for the project in a place where your have read/write access;
+- create subdirectories bdbp, lang, and src;
+- when you create the poroject with Atelier B, on the second window, select the bdp subdirectory just created. You don't need to select the lang directory as Atelier B already noticed its existence;
+- move the source files (mch, ref, imp, pmm files) from the github to the src subdirectory;
+- open the project, select the classical view,
+- open a file explorer on the src subdirectory, select all the files, drag & drop the files on the Atelier B project panel: they have been added to your project.
+- if a file is missing, it should appear on the Atelier B panel with a red cross. Just add the missing file to remove the error.
+
+## WHAT'S NEXT ?
+
+In a future iteration in 2026, new exercises will be added, covering in particular:
 - Event-B modeling,
 - Graphical animation of models with VisB,
 - Rust code generation,
 - Interactive proof, proof tactics and writing proof rules.
 
-🌍 In the meantime, if you find errors or have ideas for exercises or technical topics to address, please interact through the mechanisms offered by GitHub (issues, PR).
+In the meantime, if you find errors or have ideas for exercises or technical topics to address, please interact through the mechanisms offered by GitHub (issues, PR).
 
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
 
