@@ -2,8 +2,8 @@
 
 # B WORKBOOK
 
-The B WORKBOOK is now available on CLEARSY's GitHub (https://github.com/CLEARSY/BWORKBOOK).
-After several months of effort, the first version can be consulted and used for training in the use of formal methods and teaching the B method.
+The B WORKBOOK is now available on CLEARSY's GitHub.
+After several months of effort, the first version (121 pages) can be consulted and used for training in the use of formal methods and teaching the B method.
 
 Many thanks to the contributors and reviewers, fromm Europe et South America, who have made this possible.
 
@@ -11,16 +11,16 @@ Many thanks to the contributors and reviewers, fromm Europe et South America, wh
 ## CONTENTS
 
 The B WORKBOOK now contains 7 exercises of increasing complexity, providing a step-by-step introduction to the various Atelier B functionalities.
-It covers the phases of formal specification, implementation, proof, code generation and compilation of the final executable.
+It covers the phases of formal specification, implementation, proof, code generation, and compilation of the final executable.
 Each exercise is supplied with:
 - modeling files,
 - proof files that automatically demonstrate these models,
 - additional manual source code and associated Makefile, for compilation in Unix environments (Windows WSL, Linux, MacOS).
-It also contains instructions for using ProB to animate the models.
+It also contains instructions for using ProB to animate models.
 
 ## INSTALLING MODELS
 
-The 7 models are in this order:
+The 7 exercices are in this order:
 - a simple railroad switch,
 - an airlock operating system,
 - an integer arithmetic calculator,
@@ -44,7 +44,13 @@ Before creating a project with Atelier B:
 
 - if a file is missing, it should appear on the Atelier B panel with a red cross. Just add the missing file to remove the error.
 
-
+For the code generation phase:
+- the target directory is *lang/c* - use the menu item "Open folder" to launch a file explorer once the project is open;
+- follow the indications from the B Workbook:
+	- Some files (c, h) are generated from the B models. 
+	- Some others are developped manually - just copy them in the *lang/c* directory.
+	- In any case, copy the Makefile in this *lang/c* directory.
+	
 
 ## WHAT'S NEXT ?
 
