@@ -3,9 +3,9 @@
 # B WORKBOOK
 
 The B WORKBOOK is now available on CLEARSY's GitHub.
-After several months of effort, the first version (121 pages) can be consulted and used for training in the use of formal methods and teaching the B method.
+After several months of effort, the first version (122 pages) can be consulted and used for training in the use of formal methods and teaching the B method.
 
-Many thanks to the contributors and reviewers, fromm Europe et South America, who have made this possible.
+Many thanks to the contributors and reviewers, from Europe et South America, who have made this possible.
 
 
 ## CONTENTS
@@ -50,7 +50,7 @@ For the code generation phase:
 	- Some files (c, h) are generated from the B models. 
 	- Some others are developped manually - just copy them in the *lang/c* directory.
 	- In any case, copy the Makefile in this *lang/c* directory.
-	
+
 
 ## WHAT'S NEXT ?
 
