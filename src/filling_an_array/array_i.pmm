@@ -1,7 +1,7 @@
 ﻿THEORY User_Pass IS
-Operation(Operation_set_array_value) & ff(0) & dd(0) & eh(Dom_Array,Todo\/Done,Goal) & pp(rt.1 | 10);
+Operation(Operation_set_array_value) & ff(0) & dd(0) & pp(rt.1 | 10);
+Operation(Operation_set_array_value) & ff(0) & dd(0) & eh(new_Todo,_h,Goal) & ah(Todo : FIN(Todo)) & ah(Todo <: 0..10) & pp(rt.1 | 10) & dd(0) & ah(Todo : FIN(0..10)) & mp & mp & dd(0) & ar(SimplifyTryEnsCard.3,Goal) & mp;
 Operation(Operation_set_array_value) & ff(0) & pp(rt.1 | 10);
-Operation(WellDefinedness_set_array_value) & ff(0) & dd(0) & ah(Todo : FIN(0..10)) & ah(Todo\/Done = Dom_Array) & eh(Dom_Array,_h,Goal) & pr & pr;
-Operation(Operation_set_array_value) & ff(0) & dd(0) & eh(new_Todo,_h,Goal) & ah(Todo <: 0..10) & ah(Todo\/Done = Dom_Array) & eh(Dom_Array,_h,Goal) & pp(rt.1 | 10) & dd(0) & ah(Todo : FIN(Todo)) & ah(Todo : FIN(0..10)) & pr & pr & dd(0) & ar(SimplifyTryEnsCard.3,Goal) & ss & mp;
-Operation(Operation_set_array_value) & ff(0) & dd(1) & ah(Todo = {}) & pr & dd(0) & ah(Todo\/Done = Dom_Array) & eh(Todo,_h,Goal) & ss & dd(0) & ah(not(Done = {})) & pr & eh(Done,_h,Goal)
+Operation(Operation_set_array_value) & ff(0) & dd(0) & ah(xx : Done or xx : {chosen}) & pp(rt.1 | 10) & dd(0) & dcs(xx : Done or xx : {chosen}) & pp(rt.1 | 10) & dd(0) & ah(not(Done = {})) & pp(rt.1 | 10) & dd(0) & pr;
+Operation(WellDefinedness_set_array_value) & ff(0) & dd(0) & ah(Todo <: 0..10) & pp(rt.1 | 10) & dd(0) & ah(Todo : FIN(0..10)) & pr & pr
 END 
