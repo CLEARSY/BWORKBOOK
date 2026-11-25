@@ -1,5 +1,4 @@
 #include <stdio.h>
-/* WARNING if type checker is not performed, translation could contain errors ! */
 
 #include "Main.h"
 

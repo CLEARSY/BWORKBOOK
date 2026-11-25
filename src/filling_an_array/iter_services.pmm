@@ -1,4 +1,4 @@
-﻿THEORY User_Pass IS
+THEORY User_Pass IS
 Operation(Operation_next_iter) & ff(0) & dd(0) & pp(rt.1 | 10);
 Operation(Operation_next_iter) & ff(0) & pp(rt.1 | 10)
 END 

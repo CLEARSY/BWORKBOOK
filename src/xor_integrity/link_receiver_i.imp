@@ -1,0 +1,56 @@
+﻿IMPLEMENTATION
+    link_receiver_i
+
+REFINES
+    link_receiver
+
+SEES
+    xor_spec
+
+IMPORTS
+    xor_ops
+
+VALUES
+    LINK_KEY = 23130
+
+CONCRETE_VARIABLES
+    link_accepted ,
+    payload_word ,
+    guard_word
+
+INVARIANT
+    link_accepted : BOOL &
+    payload_word : uint16_t &
+    guard_word : uint16_t
+
+INITIALISATION
+    link_accepted := FALSE ;
+    payload_word := 0 ;
+    guard_word := 0
+
+OPERATIONS
+
+    receive_frame ( msg_one , msg_two ) =
+    VAR check IN
+        check <-- xor16 ( msg_one , msg_two ) ;
+        IF check = LINK_KEY
+        THEN
+            link_accepted := TRUE ;
+            payload_word := msg_one ;
+            guard_word := msg_two
+        ELSE
+            link_accepted := FALSE
+        END
+    END ;
+
+    res <-- frame_accepted =
+    BEGIN
+        res := link_accepted
+    END ;
+
+    res <-- retained_payload =
+    BEGIN
+        res := payload_word
+    END
+
+END

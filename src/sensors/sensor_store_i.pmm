@@ -1,0 +1,6 @@
+THEORY User_Pass IS
+Operation(Operation_set_one) & ff(0) & dc(ss = ss$1) & mp & dd & ar(s1.12,Goal) & mp;
+Operation(Operation_query) & ff(0) & pp(rp.2|10);
+Operation(Operation_is_known) & ff(0) & pp(rp.1|10);
+Operation(Operation_clear) & ff(0) & pp(rp.1|10)
+END

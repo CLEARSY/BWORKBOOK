@@ -1,0 +1,3 @@
+THEORY User_Pass IS
+Operation(AssertionLemmas) & ff(0) & dd(0) & ah(bitwise_xor_uint16(bitwise_xor_uint16(xx|->kk)|->kk) = bitwise_xor_uint16(xx|->bitwise_xor_uint16(kk|->kk))) & mp & eh(bitwise_xor_uint16(kk|->kk),0,Goal) & eh(bitwise_xor_uint16(xx|->0),xx,Goal)
+END

@@ -1,0 +1,59 @@
+IMPLEMENTATION card_input_i
+REFINES card_input
+
+IMPORTS iter_services, ctx
+
+ASSERTIONS
+    !cc.(cc : 0..9 & 10 <= cc*2 => map(cc) = cc*2-9) &
+    !cc.(cc : 0..9 & cc*2 <= 9 => map(cc) = cc*2) &
+    !cc.(cc : 0..15 & cc mod 2 = 0 => cc : even_indexes & cc /: odd_indexes) &
+    !cc.(cc : 0..15 & not(cc mod 2 = 0) => cc : odd_indexes & cc /: even_indexes)
+
+OPERATIONS
+    is_valid <-- validate_card(card_numbers) =
+    BEGIN
+        VAR local_sum, flag, step, local_mod IN
+            local_sum := 0;
+            step := 0 ;
+            local_mod := 0;
+            
+            flag <-- init_iter ;
+            WHILE (flag = TRUE) DO
+                VAR var_loc IN
+                    flag, step <-- next_iter ; 
+                    var_loc := card_numbers(step);
+                    
+                    local_mod := step mod 2 ;
+                    
+                    IF (local_mod = 0)THEN
+                        var_loc := var_loc * 2;
+                        IF (var_loc > 9) THEN
+                            var_loc := var_loc - 9
+                        END
+                    END;
+                    
+                    local_sum := local_sum + var_loc
+                
+                END
+                
+            INVARIANT
+                local_sum : NAT &
+                flag = bool(Todo /= {}) &
+                step : 0..15 &
+                local_mod : NAT &
+                Todo <: 0..15 &
+                Done <: 0..15 &
+                Todo \/ Done = 0..15 &
+                Todo /\ Done = {} &
+                local_sum <= 9 * card(Done) &
+                local_sum = SIGMA(xx).(xx : (even_indexes /\ Done) | (card_numbers; map)(xx)) + SIGMA(xx).(xx : (odd_indexes /\ Done) | card_numbers(xx))
+
+            VARIANT
+                card (Todo)
+            END;
+            local_mod := local_sum mod 10 ;
+            is_valid := bool (local_mod = 0)
+        END
+    END
+
+END

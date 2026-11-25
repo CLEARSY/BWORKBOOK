@@ -1,0 +1,25 @@
+IMPLEMENTATION
+    entry_point_i
+
+/* Top-level B0 implementation. Delegates one full cycle of the
+   cyclic executive to the interlocking machine. The C main()
+   loops this and reads back state via ihm_bs's getters. */
+
+REFINES
+    entry_point
+
+SEES
+    ctx
+
+IMPORTS
+    interlocking
+
+OPERATIONS
+
+    run_cycle(request) =
+        BEGIN
+            sense ;
+            act(request)
+        END
+
+END

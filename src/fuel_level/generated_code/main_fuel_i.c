@@ -1,5 +1,3 @@
-/* WARNING if type checker is not performed, translation could contain errors ! */
-
 #include "main_fuel.h"
 
 /* Clause SEES */

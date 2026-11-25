@@ -1,0 +1,11 @@
+﻿IMPLEMENTATION
+    link_app_i
+
+REFINES
+    link_app
+
+IMPORTS
+    xor_spec ,
+    link_receiver
+
+END

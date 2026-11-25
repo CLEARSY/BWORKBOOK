@@ -1,0 +1,15 @@
+THEORY User_Pass IS
+Operation(AssertionLemmas) & ff(0) & ss & mp;
+Operation(WellDefinedness_validate_card) & ff(0) & ss & mp;
+Operation(WellDefinedness_validate_card) & ff(0) & dd & mp;
+Operation(WellDefinedness_validate_card) & ff(0) & dd & eh(dom(card_numbers; map),dom(card_numbers),Goal) & ah(even_indexes <: dom(card_numbers)) & mp & dd & mp;
+Operation(WellDefinedness_validate_card) & ff(0) & dd & ah(even_indexes : FIN(even_indexes) & odd_indexes : FIN(odd_indexes)) & mp & mp & dd & ah(even_indexes <: dom(card_numbers; map)) & eh(dom(card_numbers; map),dom(card_numbers),Goal) & mp & dd & ah(0..9 <: NAT) & mp & dd & ah(ran(card_numbers) <: NAT) & mp & dd & ah(ran(card_numbers; map) <: NAT) & mp & dd & ah(0<=SIGMA(xx).(xx : even_indexes | (card_numbers; map)(xx)) & 0<=SIGMA(xx).(xx : odd_indexes | card_numbers(xx))) & ar(PositivitySigma.1,Once) & ar(PositivitySigma.1,Once) & mp
+END &
+
+THEORY PositivitySigma IS
+    binhyp(S : FIN(T)) &
+    binhyp(S <: dom(f)) &
+    binhyp(ran(f) <: NAT)
+    =>
+    0 <= SIGMA(x).(x:S | f(x))
+END

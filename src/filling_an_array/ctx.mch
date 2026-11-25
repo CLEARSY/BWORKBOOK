@@ -5,6 +5,6 @@ CONCRETE_CONSTANTS
     NN
 
 PROPERTIES
-    NN : NAT
+    NN : NAT & NN = 10
 
 END

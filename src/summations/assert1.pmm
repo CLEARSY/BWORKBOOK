@@ -1,0 +1,9 @@
+
+THEORY User_Pass IS
+Operation(AssertionLemmas) & ff(0) & ah(2/:{0}) & mp & dd & ar(SimplifyIntSIGXY.5,Goal) & mp;
+Operation(AssertionLemmas) & ff(0) & pp;
+Operation(AssertionLemmas) & ff(0) & dd & se(2,5,10) & mp;
+Operation(AssertionLemmas) & ff(0) & ah({0,1} = 0..1) & ss & mp & dd & eh({0,1},0..1,Goal) & mp;
+Operation(AssertionLemmas) & ff(0) & ah(SIGMA(xx).(xx = 0 & xx = 1 | xx) = SIGMA(xx).(xx : {0}/\{1} | xx)) & ss & mp & ah({0}/\{1} = {}) & mp & dd & eh({0}/\{1},{},Goal) & ss & dd & eh(SIGMA(xx).(xx = 0 & xx = 1 | xx),SIGMA(xx).(bfalse | xx),Goal) & ar(s1.6,Goal) & mp;
+Operation(WellDefinednessAssertions) & ff(0) & ah({xx | xx : {0} & xx : {1}} = {xx | xx : {0}/\{1}}) & ss & mp & ah({0}/\{1} = {}) & ss & mp & dd & eh({0}/\{1},{},Goal) & dd & eh({xx | xx : {0} & xx : {1}},{xx | xx : {}},Goal) & mp
+END

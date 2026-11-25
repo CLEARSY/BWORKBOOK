@@ -1,0 +1,4 @@
+THEORY User_Pass IS
+Operation(Operation_next_iter) & ff(0) & dd & mp & pp(rp.1 | 5);
+Operation(Operation_next_iter) & ff(0) & dd & eh(new_Todo,Todo-{chosen},Goal) & pp(rp.1 | 10)
+END

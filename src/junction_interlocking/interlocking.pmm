@@ -1,0 +1,3 @@
+﻿THEORY User_Pass IS
+Operation(Operation_act) & ff(0) & dd & dcs(request = pos_left & sw_sensor = pos_left & occ_sensor = FALSE or (request = pos_right & sw_sensor = pos_right & occ_sensor = FALSE))
+END

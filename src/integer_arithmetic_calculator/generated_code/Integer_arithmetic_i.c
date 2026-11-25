@@ -1,5 +1,3 @@
-/* WARNING if type checker is not performed, translation could contain errors ! */
-
 #include "Integer_arithmetic.h"
 
 /* Clause CONCRETE_CONSTANTS */

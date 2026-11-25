@@ -1,0 +1,51 @@
+IMPLEMENTATION
+    sensor_store_i
+REFINES
+    sensor_store
+SEES
+    sctx
+CONCRETE_VARIABLES
+    val, known
+INVARIANT
+    val   : (0..NBSENSOR) --> (0..MAXVAL) &
+    known : (0..NBSENSOR) --> BOOL        &
+    dom(reading) = known~[{TRUE}]         &
+    !ss.(ss : 0..NBSENSOR & known(ss) = TRUE => reading(ss) = val(ss))
+INITIALISATION
+    val   := (0..NBSENSOR) * {0} ;
+    known := (0..NBSENSOR) * {FALSE}
+OPERATIONS
+    
+    set_one(ss, vv) =
+    BEGIN
+        val(ss)   := vv ;
+        known(ss) := TRUE
+    END ;
+    
+    vv <-- query(ss) =
+    BEGIN
+        vv := val(ss)
+    END ;
+
+    bb <-- is_known(ss) =
+    BEGIN
+        bb := known(ss)
+    END ;
+
+    clear =
+    VAR kk IN
+        kk := 0 ;
+        WHILE kk <= NBSENSOR DO
+            known(kk) := FALSE;
+            kk := kk + 1
+        INVARIANT
+            kk    : 0..(NBSENSOR+1)             &
+            val   : (0..NBSENSOR) --> (0..MAXVAL) &
+            known : (0..NBSENSOR) --> BOOL        &
+            !ss.(ss : 0..(kk-1) => known(ss) = FALSE)
+        VARIANT
+            NBSENSOR - kk + 1
+        END
+    END
+    
+END

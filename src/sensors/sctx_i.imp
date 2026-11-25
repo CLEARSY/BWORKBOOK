@@ -1,0 +1,7 @@
+IMPLEMENTATION sctx_i
+REFINES sctx
+
+VALUES
+    NBSENSOR = 5 ;
+    MAXVAL   = 1023
+END

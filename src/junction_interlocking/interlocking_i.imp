@@ -1,0 +1,85 @@
+IMPLEMENTATION
+    interlocking_i
+
+/* B0 implementation of the abstract `interlocking` machine.
+
+   Sensors are read by calling operations on the basic machines
+   `switch_bs` and `track_bs`. The point motor is driven by calling
+   `move_to_left` / `move_to_right` on `switch_bs`.
+
+   At the end of `act` (i.e. once a full cycle has committed), the
+   controller pushes its just-committed state to `ihm_bs` so the
+   operator side and the test harness always see the post-cycle
+   reality, not a mid-cycle interim. Pushing in `act` rather than
+   in `sense` matters for the faulted scenario: when a stale
+   sensor reading forces `act` to demote a signal, the IHM reflects
+   that demotion in the same cycle. */
+
+REFINES
+    interlocking
+
+SEES
+    ctx
+
+IMPORTS
+    switch_bs,
+    track_bs,
+    ihm_bs
+
+CONCRETE_VARIABLES
+    sw_sensor,
+    occ_sensor,
+    sig_A_state,
+    sig_B_state,
+    phase
+
+INITIALISATION
+    /* fail-safe defaults: see interlocking.mch */
+    sw_sensor    := pos_unknown ;
+    occ_sensor   := TRUE        ;
+    sig_A_state  := FALSE       ;
+    sig_B_state  := FALSE       ;
+    phase        := sensing
+
+OPERATIONS
+
+    sense =
+        BEGIN
+            sw_sensor  <-- read_switch ;
+            occ_sensor <-- read_track  ;
+            phase := acting
+        END ;
+
+    act(request) =
+        BEGIN
+            /* signal authorisation */
+            IF  request = pos_left & sw_sensor = pos_left & occ_sensor = FALSE
+            THEN
+                sig_A_state := TRUE
+            ELSE
+                sig_A_state := FALSE
+            END ;
+            IF  request = pos_right & sw_sensor = pos_right & occ_sensor = FALSE
+            THEN
+                sig_B_state := TRUE
+            ELSE
+                sig_B_state := FALSE
+            END ;
+            /* point-motor commands when the requested side differs
+               from the currently sensed turnout position */
+            IF  request = pos_left & sw_sensor /= pos_left
+            THEN
+                move_to_left
+            END ;
+            IF  request = pos_right & sw_sensor /= pos_right
+            THEN
+                move_to_right
+            END ;
+            phase := sensing ;
+            /* push the committed post-cycle state to the IHM */
+            set_disp_sw     (sw_sensor)   ;
+            set_disp_sig_A  (sig_A_state) ;
+            set_disp_sig_B  (sig_B_state)
+        END
+
+END
