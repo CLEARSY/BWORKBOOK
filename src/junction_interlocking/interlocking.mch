@@ -1,9 +1,9 @@
 MACHINE
     interlocking
 
-/* Junction interlocking - chapter 1 sandbox.
+/* Junction interlocking: the interlocking controller.
 
-   Cyclic-executive model of the N1 enclenchement of a converging
+   Cyclic-executive model of the interlocking of a converging
    junction: two approach signals (A, B), a turnout, and a
    downstream occupancy detector.
 
@@ -29,8 +29,7 @@ MACHINE
 
    Shared types (POSITION, PHASE) live in `ctx`. Read-out of the
    controller state to the operator side is handled by `ihm_bs`,
-   imported by the implementation. See docs/sncf-vocabulary.md
-   for the term mapping. */
+   imported by the implementation. */
 
 SEES
     ctx
@@ -72,7 +71,7 @@ INITIALISATION
 OPERATIONS
 
     /* -------------------------------------------------- */
-    /* sensing phase  (campagne -> enclenchement)         */
+    /* sensing phase  (field -> interlocking)             */
     /* -------------------------------------------------- */
 
     sense =
@@ -83,7 +82,7 @@ OPERATIONS
         END;
 
     /* -------------------------------------------------- */
-    /* acting phase  (enclenchement -> campagne)          */
+    /* acting phase  (interlocking -> field)              */
     /* -------------------------------------------------- */
 
     act(request) =

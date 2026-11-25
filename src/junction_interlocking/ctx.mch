@@ -1,9 +1,8 @@
 MACHINE
     ctx
 
-/* Context machine for the junction-interlocking sandbox.
-   Holds shared types (and, in later chapters, shared constants)
-   that the controller will SEE.
+/* Context machine of the junction interlocking.
+   Holds the shared types that the controller SEES.
 
    Convention: in B-Workbook style, sets/constants live in a
    dedicated context machine separate from the controller logic.
