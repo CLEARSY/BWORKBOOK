@@ -36,7 +36,7 @@ The second chapter, *Interactive proof, proof tactics and writing proof rules*, 
 - sensors,
 - proving the Luhn algorithm.
 
-Every proof obligation of the second chapter is proved with Atelier B 24.04.2 Community Edition, without any project setting and without an external prover.
+Every proof obligation of the 14 exercises is proved with Atelier B 24.04.2 Community Edition, without any project setting and without an external prover, by following the procedure of each exercise: the automatic prover at the force it gives, then the *User Pass* with the *pmm* files supplied.
 
 ## INSTALLING MODELS
 
